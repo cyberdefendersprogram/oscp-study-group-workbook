@@ -14,3 +14,9 @@ description: Study References.
 | [ippsec.rocks](https://ippsec.rocks/) | Video Tutorials for pentesting. |
 | [LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w) | Video Tutorials for pentesting. |
 
+### People To Follow
+
+| Name | Skills |
+| :--- | :--- |
+| [Snowscan](https://snowscan.io/) | Top hacker on hackthebox |
+
