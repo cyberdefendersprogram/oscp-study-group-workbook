@@ -8,6 +8,6 @@
 
 ## Interviews
 
-* [Will Bonk](interviews/untitled.md)
+* [Will Bonk](interviews/will-bonk-interview.md)
 * [Home](https://www.cyberdefendersprogram.com)
 
