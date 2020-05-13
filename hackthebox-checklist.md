@@ -1,7 +1,10 @@
-# Hack the Box Checklist - *Machine Name* (10.10.10.ddd)
+# Hack the Box Checklist - Template
+
 Mark Down version of Cherry Tree template by **devzspy** : https://github.com/devzspy/oscp-certification/blob/master/Note%20Taking%20Tools/CherryTree%20Template/CTF_template.ctb
 
 This is a template for working on steps to follow when attempting a Hack the Box machine
+
+*Machine Name*: (10.10.10.ddd)
 
 ## 1. Enumeration
 ### TCP
