@@ -4,6 +4,7 @@
 * [HackTheBox CheckList](hackthebox-checklist/README.md)
   * [OpenAdmin](hackthebox-checklist/openadmin.md)
 * [OSCP -- The Exam](oscp-the-exam.md)
+* [Buffer Overflow](buffer-overflow.md)
 * [Bounties & CTFs](bounties-and-competitions.md)
 * [References](references.md)
 
