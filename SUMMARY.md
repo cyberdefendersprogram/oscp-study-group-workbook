@@ -7,6 +7,7 @@
 * [Buffer Overflow](buffer-overflow.md)
 * [Bounties & CTFs](bounties-and-competitions.md)
 * [References](references.md)
+* [Hacker Haikus](For Fun/Hacker Haikus.md)
 
 ## Interviews
 
