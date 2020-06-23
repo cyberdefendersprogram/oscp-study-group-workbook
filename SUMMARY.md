@@ -12,7 +12,7 @@
   * [Noah's Spacejam KOTH writeup](writeups/koth/noah-spacejam.md)
   * [Vincent's Shrek KOTH writeup](writeups/koth/vw-Shrek.md)
   * [Vincent's Tyler KOTH writeup](writeups/koth/vincent-Tyler.md)
-  * [Drew's HTB OpenAdmin writeup)(writeups/htb/drew-openadmin.md)
+  * [Drew's HTB OpenAdmin writeup](writeups/htb/drew-openadmin.md)
 
 ## Interviews
 
