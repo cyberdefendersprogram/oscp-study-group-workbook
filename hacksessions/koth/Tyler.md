@@ -37,28 +37,6 @@ Nmap done: 1 IP address (1 host up) scanned in 101.87 seconds
 
 Looking at a regular gobuster, there's nothing useful. I uploaded php_reverse_shell.php but I couldn't find where it was uploaded.
 
-## Finding flag.txt
-
-```
-# smbclient -N \\\\10.10.172.202\\public
-Anonymous login successful
-Try "help" to get a list of possible commands.
-smb: \> dir
-  .                                   D        0  Wed Mar 25 17:09:50 2020
-  ..                                  D        0  Wed Mar 25 17:02:28 2020
-  flag.txt                            N       33  Wed Mar 25 17:08:05 2020
-  alert.txt                           N       50  Wed Mar 25 17:09:50 2020
-
-		13092864 blocks of size 1024. 8348236 blocks available
-```
-
-### flag.txt
-
-```
-# cat flag.txt 
-2308b0cccea3f2a187a89a9f3155a3a4
-```
-
 ### alert.txt
 
 ```
@@ -96,13 +74,6 @@ ssh into narrator
 narrator@tyler.thm's password: 
 Last login: Thu Mar 26 10:52:23 2020 from cyberdyne
 [narrator@tyler ~]$
-```
-
-### user.txt
-
-```
-cat user.txt 
-991c65538b9afaf2494f4552b915c948
 ```
 
 ### app.py
