@@ -17,6 +17,7 @@
 ## Interviews
 
 * [Dhruv Verma](interviews/dhruv-verma.md)
+* [Aaron Goldstein](interviews/aaron-goldstein.md)
 * [Will Bonk](interviews/will-bonk-interview.md)
 * [Home](https://www.cyberdefendersprogram.com)
 
