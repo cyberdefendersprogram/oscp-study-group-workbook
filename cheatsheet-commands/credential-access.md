@@ -3,6 +3,6 @@
 ## password cracking
 
 ```text
-> john
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt <password_hashes>
 ```
 
