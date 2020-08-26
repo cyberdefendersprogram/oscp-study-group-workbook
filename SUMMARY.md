@@ -7,6 +7,8 @@
 * [Buffer Overflow](buffer-overflow.md)
 * [Bounties & CTFs](bounties-and-competitions.md)
 * [References](references.md)
+* [Cheatsheet Commands](cheatsheet-commands/README.md)
+  * [recon](cheatsheet-commands/recon.md)
 * [Hacker Haikus](hacker-haikus.md)
 * [Write Ups](write-ups/README.md)
   * [Noah's Spacejam KOTH writeup](write-ups/noah-spacejam.md)
