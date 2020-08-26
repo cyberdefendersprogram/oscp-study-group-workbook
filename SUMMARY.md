@@ -8,6 +8,7 @@
 * [Bounties & CTFs](bounties-and-competitions.md)
 * [References](references.md)
 * [Cheatsheet Commands](cheatsheet-commands/README.md)
+  * [privilege-escalation-linux](cheatsheet-commands/privilege-escalation-linux.md)
   * [privilege-escalation-win](cheatsheet-commands/privilege-escalation-win.md)
   * [reverse-shells](cheatsheet-commands/reverse-shells.md)
   * [enumeration](cheatsheet-commands/enumeration.md)
